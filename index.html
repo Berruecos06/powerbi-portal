@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Power BI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            text-align: center;
+            padding: 40px;
+        }
+        .login, .content {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #0078d4;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            display: block;
+            margin: 15px 0;
+            text-decoration: none;
+            color: #0078d4;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login" id="login">
+    <h2>🔐 Acceso Portal Power BI</h2>
+    <input type="password" id="password" placeholder="Ingrese la contraseña">
+    <br>
+    <button onclick="checkPassword()">Ingresar</button>
+    <p id="error" style="color:red;"></p>
+</div>
+
+<div class="content" id="content" style="display:none;">
+    <h2>📊 Dashboards Power BI</h2>
+
+    <a href="#">📈 Ventas</a>
+    <a href="#">💰 Finanzas</a>
+    <a href="#">📦 Inventarios</a>
+    <a href="#">🎯 KPI Gerenciales</a>
+    <a href="#">🧾 Operaciones</a>
+</div>
+
+<script>
+    function checkPassword() {
+        const pass = document.getElementById("password").value;
+        const correctPassword = "1234"; // luego la cambias
+
+        if (pass === correctPassword) {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        } else {
+            document.getElementById("error").innerText = "Contraseña incorrecta";
+        }
+    }
+</script>
+
+</body>
+</html>
